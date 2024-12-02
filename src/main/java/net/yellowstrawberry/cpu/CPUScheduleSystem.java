@@ -50,9 +50,9 @@ public abstract class CPUScheduleSystem {
      * In this method, ONLY ONE TURN should be processed.
      * */
     public void run() {
-        task.run();
-        if(task.duration() < 1) {
-            removeTask(task.id());
+        getCurrentTask().run();
+        if(getCurrentTask().duration() < 1) {
+            removeTask(getCurrentTask().id());
             setTask(nextTask());
         }
     }

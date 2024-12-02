@@ -14,8 +14,8 @@ public class RoundRobinCPU extends CPUScheduleSystem{
     @Override
     public void run() {
         super.run();
-        if(currentIndex < getTasks().size()) currentIndex++;
-        else currentIndex = 0;
+        currentIndex++;
+        if(currentIndex >= getTasks().size()) currentIndex = 0;
     }
 
     @Override
